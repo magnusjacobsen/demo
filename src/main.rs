@@ -16,7 +16,7 @@ use tunnel::TunnelState;
 
 const SCREEN_WIDTH: usize = 640;
 const SCREEN_HEIGHT: usize = 480;
-const DESIRED_FPS: u32 = 30;
+const DESIRED_FPS: u32 = 60;
 
 struct MainState {
     audio_intro: audio::Source,
