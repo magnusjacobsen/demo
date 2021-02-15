@@ -8,6 +8,7 @@ use crate::{SCREEN_HEIGHT, SCREEN_WIDTH, DESIRED_FPS};
 
 const TEX_WIDTH: usize = 256;
 const TEX_HEIGHT: usize = 256;
+const TICK_INCREMENT: f64 = 1. / 80.; 
 
 // code ported from this: https://lodev.org/cgtutor/tunnel.html
 pub struct TunnelState {
@@ -91,7 +92,7 @@ impl TunnelState {
 impl EventHandler for TunnelState {
     fn update(&mut self, ctx: &mut Context) -> GameResult {
         while timer::check_update_time(ctx, DESIRED_FPS) {
-            self.ticks += 1.0 / 36.7;
+            self.ticks += TICK_INCREMENT;
             self.buffer = self.updated_buffer();
         }
         Ok(())
